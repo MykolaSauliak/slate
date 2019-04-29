@@ -27,9 +27,17 @@ Welcome to the Quiz API! You can use our API to access Quiz API endpoints, which
 
 # Authorization
 
+ We expects for the API key to be included in some API requests to the server in a header that looks like the following:
+
+`Authorization: 9quizquizquiz9`
+
+<aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+</aside> 
+
 ## Registration
 
-To register new user, download our Android app
+To register new user, download our <a href="https://play.google.com/store/apps/details?id=com.kailuas.mnemonic">Android app</a>
 
 ## Recieve Authorization token
 
@@ -170,13 +178,8 @@ Example:
 curl -d "password=1234567" -X POST "95.216.145.170:5000/api/quizpack/5cc4af92a6f1412f6f89d366"
 
 ```
-<!-- We expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: 9quizquizquiz9`
 
-<aside class="notice">
-You must replace <code>9quizquizquiz9</code> with your personal API key.
-</aside> -->
 <aside class="notice">
 You must replace <code>quizpack_password</code> with quizpack password, <code>ID</code> with quizpack's ID 
 </aside>
@@ -252,6 +255,17 @@ curl "http://95.216.145.170:5000/api/quizpack/add-quizpack"
   -H "Authorization: 9quizquizquiz9"
 ```
 
+<aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+
+To get API key, use our endpoint (see <a href="#recieve-authorization-token">section</a> about)
+
+</aside> 
+
+<!-- <aside class="notice">
+To get API key, use our endpoint (see <a href="#recieve-authorization-token">section</a> about)</aside>  -->
+
+
 > The above command returns JSON structured like this:
 
 ```json
@@ -259,6 +273,7 @@ curl "http://95.216.145.170:5000/api/quizpack/add-quizpack"
     "msg": "Successfully add newQuizPack",
     "id": "5cc60cf6907b972d25b651ba"
 }
+
 ```
 
 This endpoint create new quizpack.
@@ -272,9 +287,11 @@ This endpoint create new quizpack.
 Parameter | Description | Default
 --------- | ----------- | -----------
 title* | The title of the new quizpack 
+type* | one-answer or mulitple-choise 
 private  | true or false | false
 password | If you want to create private quizpack, set password (between 7 and 20 characters)
 quizzes | Array of quizze's id <code>or</code> array of quiz objects | []
+tags | Array of strings | []
 
 > <aside class="notice">
 Quiz object look like this :
@@ -291,6 +308,9 @@ curl "http://95.216.145.170:5000/api/quizpack/<ID>"
   -X DELETE
   -H "Authorization: 9quizquizquiz9"
 ```
+<aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+</aside> 
 
 > The above command returns JSON structured like this:
 
@@ -328,6 +348,10 @@ curl "http://95.216.145.170:5000/api/quizpack/<ID>"
   -H "Authorization: 9quizquizquiz9"
 ```
 <aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+</aside> 
+
+<aside class="notice">
 Use params that you want to change, if you want to set new title, add to params - title=yourNewTitle
 </aside>
 
@@ -348,8 +372,6 @@ curl "http://95.216.145.170:5000/api/quizpack/5cc60cf6907b972d25b651ba"
   -d "tags=['new tag']"
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM2MTNmNDkyMTY5MTQ0MzJjNjg2ZCIsIm5hbWUiOiJuaWNrMiIsImlhdCI6MTU1NjUyNTkwMiwiZXhwIjoxNTU2NTI5NTAyfQ.iNc7fhn_IFvBeu9A43zycqCwXd9Y8bd5T-XjnXsTV4A"
 ```
-
-
 
 This endpoint modify a specific quizpack.
 
