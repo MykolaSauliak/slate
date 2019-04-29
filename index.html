@@ -286,8 +286,16 @@
 <!-- We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. -->
 
 <!-- This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
-<h1 id='authorization'>Authorization</h1><h2 id='registration'>Registration</h2>
-<p>To register new user, download our Android app</p>
+<h1 id='authorization'>Authorization</h1>
+<p>We expects for the API key to be included in some API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: 9quizquizquiz9</code></p>
+
+<aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+</aside> 
+<h2 id='registration'>Registration</h2>
+<p>To register new user, download our <a href="https://play.google.com/store/apps/details?id=com.kailuas.mnemonic">Android app</a></p>
 <h2 id='recieve-authorization-token'>Recieve Authorization token</h2>
 <blockquote>
 <p>To get Bearer token, use this code:</p>
@@ -408,14 +416,6 @@ Example:
 curl -d <span class="s2">"password=1234567"</span> -X POST <span class="s2">"95.216.145.170:5000/api/quizpack/5cc4af92a6f1412f6f89d366"</span>
 
 </code></pre>
-<!-- We expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: 9quizquizquiz9`
-
-<aside class="notice">
-You must replace <code>9quizquizquiz9</code> with your personal API key.
-</aside> -->
-
 <aside class="notice">
 You must replace <code>quizpack_password</code> with quizpack password, <code>ID</code> with quizpack's ID 
 </aside>
@@ -494,6 +494,16 @@ You must replace <code>quizpack_password</code> with quizpack password, <code>ID
   -d <span class="s2">"title=newQUIZPACK&amp;private=false"</span>
   -H <span class="s2">"Authorization: 9quizquizquiz9"</span>
 </code></pre>
+<aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+
+To get API key, use our endpoint (see <a href="#recieve-authorization-token">section</a> about)
+
+</aside> 
+
+<!-- <aside class="notice">
+To get API key, use our endpoint (see <a href="#recieve-authorization-token">section</a> about)</aside>  -->
+
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -501,6 +511,7 @@ You must replace <code>quizpack_password</code> with quizpack password, <code>ID
     </span><span class="s2">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully add newQuizPack"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5cc60cf6907b972d25b651ba"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <p>This endpoint create new quizpack.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
@@ -519,6 +530,11 @@ You must replace <code>quizpack_password</code> with quizpack password, <code>ID
 <td></td>
 </tr>
 <tr>
+<td>type*</td>
+<td>one-answer or mulitple-choise</td>
+<td></td>
+</tr>
+<tr>
 <td>private</td>
 <td>true or false</td>
 <td>false</td>
@@ -533,6 +549,11 @@ You must replace <code>quizpack_password</code> with quizpack password, <code>ID
 <td>Array of quizze&#39;s id <code>or</code> array of quiz objects</td>
 <td>[]</td>
 </tr>
+<tr>
+<td>tags</td>
+<td>Array of strings</td>
+<td>[]</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -545,6 +566,10 @@ Quiz object look like this :
   -X DELETE
   -H <span class="s2">"Authorization: 9quizquizquiz9"</span>
 </code></pre>
+<aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+</aside> 
+
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -577,6 +602,10 @@ Only user who created the quizpack can modify it
   -d <span class="s2">"title=&lt;newtitle&gt;&amp;tags=['new']"</span>
   -H <span class="s2">"Authorization: 9quizquizquiz9"</span>
 </code></pre>
+<aside class="notice">
+You must replace <code>9quizquizquiz9</code> with your personal API key.
+</aside> 
+
 <aside class="notice">
 Use params that you want to change, if you want to set new title, add to params - title=yourNewTitle
 </aside>
