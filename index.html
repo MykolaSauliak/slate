@@ -219,6 +219,9 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
+            <a href="#what-39-s-new" class="toc-h1 toc-link" data-title="What's new">What's new</a>
+          </li>
+          <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
@@ -280,7 +283,9 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <h1 id='what-39-s-new'>What&#39;s new</h1>
+<p>05.05.2019 - add quote and explanation field for Quiz</p>
+<h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Quiz API! You can use our API to access Quiz API endpoints, which can get information on various quizpacks, quizzes in our database.</p>
 
 <!-- We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. -->
@@ -778,6 +783,16 @@ curl "http://95.216.145.170:5000/api/quiz/add"
 <tr>
 <td>correct*</td>
 <td>Array correct answer (min =1,max=6)</td>
+<td></td>
+</tr>
+<tr>
+<td>quote</td>
+<td>String, max length 2000 characters</td>
+<td></td>
+</tr>
+<tr>
+<td>explanation</td>
+<td>String, max length - 5000 characters</td>
 <td></td>
 </tr>
 </tbody></table>
