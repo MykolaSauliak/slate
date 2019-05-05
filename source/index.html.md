@@ -17,6 +17,10 @@ includes:
 search: true
 ---
 
+# What's new
+
+05.05.2019 - add quote and explanation field for Quiz
+
 # Introduction
 
 Welcome to the Quiz API! You can use our API to access Quiz API endpoints, which can get information on various quizpacks, quizzes in our database.
@@ -505,6 +509,8 @@ answer4  | String |
 answer5  | String | 
 answer6  | String | 
 correct* | Array correct answer (min =1,max=6) 
+quote | String, max length 2000 characters
+explanation | String, max length - 5000 characters
 
 > <aside class="notice">
 Quiz object look like this :
